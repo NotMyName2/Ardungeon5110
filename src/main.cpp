@@ -64,7 +64,7 @@ todo:
 //graphicObject myObjects[amountOfGraphicObjects] = {*cross}
 Adafruit_PCD8544 myDisplay = Adafruit_PCD8544(9, 8, 7);
 //Player* player = new Player(0,0);
-
+//extern GameField field;
 const short amountOfGraphicObjects = 2;
 //graphicObject* onScreenPtrs[amountOfGraphicObjects] = {gridGO, player.itsGraphicObject};// , grid};
 
@@ -77,6 +77,7 @@ void pressedButtonInterrupt()
 
 OnBoard* newEnemy = new OnBoard(1,1,zomGO);
 void setup() {
+    randomSeed(analogRead(A6));
   pinMode(A0, INPUT_PULLUP);
   pinMode(A1, INPUT_PULLUP);
   pinMode(A2, INPUT_PULLUP);
@@ -98,8 +99,8 @@ void setup() {
   playerGO->isVisible = true;
   //zomGO->xCoord = 25;
   //zomGO->yCoord = 12;
-  GameField field;
-  field.generateNewTile(1,1);
+
+
   //gameField.policka[1][1]-> = ENEMY;
 
 }
@@ -118,13 +119,40 @@ int checkButtons()
   else return 0;
 }
 
-
+bool wantToGenerate = true;
+short toGenerate = 9;
 void calculateNext()
 {
+  wantToGenerate = true;
+  while(wantToGenerate && toGenerate > 0)
+  {
+    short newnewX = random(0,3);
+    short newnewY = random(0,3);
+    short newEnemyType = random(0, 3);
+    if(field.policka[newnewX][newnewY] == 0)
+    {
+      field.generateNewTile(newnewX, newnewY, newEnemyType);
+      wantToGenerate = false;
+      toGenerate--;
+    }
+  }
 
   //bowAndArrow->drawSelf(1);
   //zomGO->drawSelf(1);
-  int direction = checkButtons();
+  Serial.println("printujeme policka");
+  for(short x = 0; x < 3; x++)
+  {
+    /*for(short y = 0; y < 3; y++)
+    {
+      if(field.policka[x][y] == 0)
+      Serial.print(x);
+      Serial.print(" ");
+      Serial.print(y);
+      Serial.println(" is null");
+    }*/
+  }
+   int direction = checkButtons();
+
   if(direction !=0)
   {
 //      player->move(direction);
@@ -132,7 +160,7 @@ void calculateNext()
   }
   gridGO->drawSelf(1);
   field.displayGameField();
-  digitalWrite(5, !digitalRead(5));
+
   //player->drawSelfP(1);
 
 }
@@ -156,5 +184,8 @@ void loop()
         myDisplay.clearDisplay();
         calculateNext();
         refreshDisplay();
+        digitalWrite(5, !digitalRead(5));
+        delay(800);
+
       }
 }
