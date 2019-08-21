@@ -30,6 +30,9 @@ public:
   int HP;
   graphicObject* itsGraphicObject;
   int tileType;
+
+
+
   OnBoard();
   OnBoard(graphicObject* itsObject);
   OnBoard(int XCOORD, int YCOORD, graphicObject* itsGObject);

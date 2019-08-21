@@ -33,6 +33,6 @@ extern   uint8_t slimMap[14*2];
 //extern uint8_t veryBigMap[100*7];
 
 extern   uint8_t gridMap[64*6];
-
+extern uint8_t emptyMap[4*1];
 #define myBitmapsHIncluded
 #endif

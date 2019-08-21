@@ -49,7 +49,7 @@ private:
 //graphicObject xicht(8, 2, xichtmap, 1, 4, 4);
 //extern graphicObject veryBig;
 extern graphicObject* bowAndArrow;
-
+extern graphicObject* emptyGO;
 extern graphicObject* playerGO;
 extern graphicObject* gridGO;
 

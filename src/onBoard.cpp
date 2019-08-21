@@ -42,22 +42,26 @@ OnBoard::OnBoard()
 
 }
 
-OnBoard::OnBoard(graphicObject* itsGObject)
+OnBoard::OnBoard(graphicObject* itsGObject):
+
+  Xcoordinate(0),
+  Ycoordinate(0),
+  HP(4),
+  itsGraphicObject(itsGObject)
+
 {
-  Xcoordinate = 0;
-  Ycoordinate = 0;
-  HP = 4;
-  itsGraphicObject = itsGObject;
+
 }
 
 
-OnBoard::OnBoard(int XCOORD, int YCOORD, graphicObject* itsGObject)
-{
-  Xcoordinate = XCOORD;
-  Ycoordinate = YCOORD;
-  HP = 4;
-  itsGraphicObject = itsGObject;
-}
+OnBoard::OnBoard(int XCOORD, int YCOORD, graphicObject* itsGObject):
+
+  Xcoordinate(XCOORD),
+  Ycoordinate(YCOORD),
+  HP(4),
+  itsGraphicObject(itsGObject)
+
+{}
 
 OnBoard::~OnBoard()
 {

@@ -33,17 +33,10 @@
 #define NEGATIVE 0
 /*
 
-bitmapy idu sprava doleva zhora nadol
+bitmapy idu sprava doleva zhora nadol a jednotlive byty idu zespodu hore
 
 todo:
-  *offset-writing do pcd8544_buffer
-  *rozdelit pocitani a vykreslovani
-  *posuvani cez calculatenext
 
-  prepis graphicObject veci na graphicObject*
-
-  vymyslet animacie
-  vlastne postay a secko lol
 
 
 
@@ -70,7 +63,8 @@ todo:
 
 //graphicObject myObjects[amountOfGraphicObjects] = {*cross}
 Adafruit_PCD8544 myDisplay = Adafruit_PCD8544(9, 8, 7);
-Player* player = new Player(0,0);
+//Player* player = new Player(0,0);
+
 const short amountOfGraphicObjects = 2;
 //graphicObject* onScreenPtrs[amountOfGraphicObjects] = {gridGO, player.itsGraphicObject};// , grid};
 
@@ -133,7 +127,7 @@ void calculateNext()
   int direction = checkButtons();
   if(direction !=0)
   {
-      player->move(direction);
+//      player->move(direction);
       //player->drawSelfP(1);
   }
   gridGO->drawSelf(1);

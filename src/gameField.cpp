@@ -46,6 +46,12 @@ void GameField::displayGameField()
       {
         policka[x][y]->drawSelf(1);
       }
+      else
+      {
+        emptyGO->xCoord = x*20+4;
+        emptyGO->yCoord = y*16;
+        emptyGO->drawSelf(1);
+      }
     }
   }
 

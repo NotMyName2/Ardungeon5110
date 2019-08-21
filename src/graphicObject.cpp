@@ -64,6 +64,7 @@ graphicObject* gridGO = new graphicObject(64, 6, gridMap);
 graphicObject* zomGO = new graphicObject(14, 2, zomMap);
 graphicObject* skelGO = new graphicObject(14, 2, skelMap);
 graphicObject* slimGO = new graphicObject(14, 2, slimMap);
+graphicObject* emptyGO = new graphicObject(4, 1, emptyMap);
 
 
 void graphicObject::drawSelf(bool positive)
