@@ -6,6 +6,10 @@
 #include "onBoard.h"
 #endif
 
+#ifndef myBitmapsHIncluded
+#include "myBitmaps.h"
+#endif
+
 GameField::GameField()
 {
   for(short x = 0; x < 3; x++)
@@ -27,10 +31,13 @@ GameField::~GameField()
   }
 }
 
-void GameField::generateNewTile(short newX, short newY, int enemyType)
+void GameField::generateNewTile(short newX, short newY)
 {
 
   OnBoard* newTile = new OnBoard(newX, newY, zomGO);
+  short enemyType = random(0,3);
+  short newFD = random(0,9);
+  short newSD = random(0,9);
   switch (enemyType)
   {
     case 0:
@@ -50,15 +57,17 @@ void GameField::generateNewTile(short newX, short newY, int enemyType)
     default:
     {
       newTile->itsGraphicObject = 0;
+      break;
     }
+
   }
-
-
   newTile->itsGraphicObject->xCoord = Xcoordinate*20+4;
   newTile->itsGraphicObject->yCoord = Ycoordinate*16;
   newTile->tileType = ENEMY;
   //newTile->isVisible = true;
   policka[newX][newY] = newTile;
+  firstDigit[newX][newY] = new graphicObject(3,1, numbers[newFD], newX*20+15, newY*16);
+  secondDigit[newX][newY] = new graphicObject(3,1, numbers[newSD], newX*20+15, newY*16+7);
 
 
   if(policka[newX][newY] == 0)
@@ -87,8 +96,17 @@ void GameField::displayGameField()
         emptyGO->yCoord = y*16;
         emptyGO->drawSelf(1);
       }
+      if (firstDigit[x][y] !=0)
+      {
+        firstDigit[x][y]->drawSelf(1);
+      }
+      if (secondDigit[x][y])
+      {
+         secondDigit[x][y]->drawSelf(1);
+      }
     }
   }
+
 
 }
 

@@ -75,7 +75,7 @@ void pressedButtonInterrupt()
 
 //graphicObject* yeet = new graphicObject(14, 2, skelGO->ownMap);
 
-OnBoard* newEnemy = new OnBoard(1,1,zomGO);
+//OnBoard* newEnemy = new OnBoard(1,1,zomGO);
 void setup() {
     randomSeed(analogRead(A6));
   pinMode(A0, INPUT_PULLUP);
@@ -131,7 +131,7 @@ void calculateNext()
     short newEnemyType = random(0, 3);
     if(field.policka[newnewX][newnewY] == 0)
     {
-      field.generateNewTile(newnewX, newnewY, newEnemyType);
+      field.generateNewTile(newnewX, newnewY);
       wantToGenerate = false;
       toGenerate--;
     }

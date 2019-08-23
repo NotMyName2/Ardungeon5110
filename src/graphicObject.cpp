@@ -49,7 +49,15 @@ extern Adafruit_PCD8544 myDisplay;
     yCoord = 0;
   }
 
-
+  graphicObject::graphicObject(short newXSize, short newYSize, uint8_t* itsMap, short newXCoord, short newYCoord)
+  {
+    XSize = newXSize;
+    YSize = newYSize;
+    ownMap = itsMap;
+    isVisible = true;
+    xCoord = newXCoord;
+    yCoord = newYCoord;
+  }
 
 
 //graphicObject* cross = new graphicObject(5,1,crossOofMap);

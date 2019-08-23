@@ -24,7 +24,7 @@ public:
   short yCoord;
 
 //  graphicObject(short newXSize, short newYSize, uint8_t* itsMap, bool newVisible, short newxCoord, short newyCoord);
-
+  graphicObject(short newXSize, short newYSize, uint8_t* itsMap, short newXCoord, short newYCoord);
   graphicObject(short newXSize, short newYSize, uint8_t* itsMap);
   graphicObject();
   //graphicObject(const graphicObject&);

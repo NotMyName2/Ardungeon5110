@@ -33,7 +33,10 @@ public:
   GameField();
   ~GameField();
   OnBoard* policka[3][3];
-  void generateNewTile(short newX, short newY, int enemyType);
+  graphicObject* firstDigit[3][3];
+  graphicObject* secondDigit[3][3];
+
+  void generateNewTile(short newX, short newY);
   void moveRow(int cislo, int smer);
   void displayGameField();
   void moveColumn(int cislo, int smer);    //technicky rovnake jak
