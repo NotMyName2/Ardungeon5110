@@ -14,24 +14,24 @@ class Player:public OnBoard
   public:
     int score;
     bool hasWeapon;
-    int HP;
-    int attackVal;
-    int defenseVal;
+    short HP;
+    short attackVal;
+    short defenseVal;
 
 
     Player();
-    Player(int newX, int newY);
+    Player(short newX, short newY);
     ~Player();
 
-    void move(int smer);
-    bool canMove(int smer);
-    void playerMove(int smer);// inherits
+    void move(short smer);
+    bool canMove(short smer);
+    void playerMove(short smer);// inherits
     void refuseMove();
-    void attack(int smer);
+    void attack(short smer);
     void action();
     void drawSelfP(bool positive);
   private:
-    int dummy;
+    short dummy;
 };
 
 #define playerHIncluded

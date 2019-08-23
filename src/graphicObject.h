@@ -24,7 +24,7 @@ public:
   short yCoord;
 
 //  graphicObject(short newXSize, short newYSize, uint8_t* itsMap, bool newVisible, short newxCoord, short newyCoord);
-
+  graphicObject(short newXSize, short newYSize, uint8_t* itsMap, short newXCoord, short newYCoord);
   graphicObject(short newXSize, short newYSize, uint8_t* itsMap);
   graphicObject();
   //graphicObject(const graphicObject&);
@@ -46,15 +46,17 @@ private:
 
 //extern graphicObject* cross;
 //extern graphicObject* nudes;
+extern graphicObject* smallNudes;
 //graphicObject xicht(8, 2, xichtmap, 1, 4, 4);
 //extern graphicObject veryBig;
-extern graphicObject* bowAndArrow;
+//extern graphicObject* bowAndArrow;
 extern graphicObject* emptyGO;
 extern graphicObject* playerGO;
 extern graphicObject* gridGO;
 
 extern graphicObject* zomGO;
-extern graphicObject* skelGO;
+extern graphicObject* weakSkelGO;
 extern graphicObject* slimGO;
+extern graphicObject* GUIGO;
 #define graphicObjectHIncluded
 #endif

@@ -71,7 +71,7 @@
 
   }
 
-Player::Player(int XCOO, int YCOO):
+Player::Player(short XCOO, short YCOO):
 (
   OnBoard(XCOO,YCOO, playerGO)
 )
@@ -89,7 +89,7 @@ Player::Player(int XCOO, int YCOO):
   Player::~Player() {}
 
 
-  bool Player::canMove(int smer)
+  bool Player::canMove(short smer)
   {
     if( (smer == UP) && (Ycoordinate <= 0)){return false;}
     if( (smer == DOWN) && (Ycoordinate >= 2)) {return false;}
@@ -103,7 +103,7 @@ Player::Player(int XCOO, int YCOO):
 
     return true;
   }
-  void Player::move(int smer)
+  void Player::move(short smer)
   {
     if(canMove(smer))
     {
@@ -158,7 +158,7 @@ Player::Player(int XCOO, int YCOO):
       playerGO->drawSelf(positive);
   }
 
-  void Player::attack(int smer)
+  void Player::attack(short smer)
   {
     score++;
     return;
