@@ -62,22 +62,12 @@ void GameField::generateNewTile(short newX, short newY)
 
   }
   newTile->itsGraphicObject->xCoord = Xcoordinate*20+4;
-  newTile->itsGraphicObject->yCoord = Ycoordinate*16;
+  newTile->itsGraphicObject->yCoord = Ycoordinate*16+1;
   newTile->tileType = ENEMY;
   //newTile->isVisible = true;
   policka[newX][newY] = newTile;
-  firstDigit[newX][newY] = new graphicObject(3,1, numbers[newFD], newX*20+15, newY*16);
-  secondDigit[newX][newY] = new graphicObject(3,1, numbers[newSD], newX*20+15, newY*16+7);
-
-
-  if(policka[newX][newY] == 0)
-  {
-  Serial.println("New address is null");
-  }
-  else
-  {
-    Serial.println("New address is not null");
-  }
+  firstDigit[newX][newY] = new graphicObject(3,1, numbers[newFD], newX*20+15, newY*16+1);
+  secondDigit[newX][newY] = new graphicObject(3,1, numbers[newSD], newX*20+15, newY*16+8);
 
 }
 void GameField::displayGameField()

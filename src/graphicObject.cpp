@@ -62,17 +62,19 @@ extern Adafruit_PCD8544 myDisplay;
 
 //graphicObject* cross = new graphicObject(5,1,crossOofMap);
 //graphicObject* nudes = new graphicObject(29,2,nudesMap);
+graphicObject* smallNudes = new graphicObject(23,2,smallNudesMap,61, 32);
+
 //graphicObject xicht(8, 2, xichtmap, 1, 4, 4);
 //graphicObject veryBig(100, 7, veryBigMap);
-graphicObject* bowAndArrow = new graphicObject(16, 2, bowAndArrowMap);
+//graphicObject* bowAndArrow = new graphicObject(16, 2, bowAndArrowMap);
 //graphicObject full(8,4,fullmap);
-graphicObject* gridGO = new graphicObject(64, 6, gridMap);
+graphicObject* gridGO = new graphicObject(64, 6, gridMap,0,0);
 
 graphicObject* playerGO = new graphicObject(13, 2, playerMap);
 graphicObject* zomGO = new graphicObject(13, 2, zomMap);
 graphicObject* weakSkelGO = new graphicObject(13, 2, weakSkelMap);
 graphicObject* slimGO = new graphicObject(13, 2, slimMap);
-
+graphicObject* GUIGO = new graphicObject(11,6, GUIMap, 61, 0);
 
 graphicObject* emptyGO = new graphicObject(4, 1, emptyMap);
 
@@ -80,6 +82,7 @@ graphicObject* emptyGO = new graphicObject(4, 1, emptyMap);
 void graphicObject::drawSelf(bool positive)
 {
   {
+    if(!isVisible) return;
     short itsWidth =XSize;
     short itsHeight = YSize;
     byte* theBitmap = ownMap;
@@ -92,12 +95,12 @@ void graphicObject::drawSelf(bool positive)
     //xRunner = max(0, -xCoord);  // runner pro bitmapu, jestli zacne mimo, tak xRunner preskoci cast co je mimo
     //yRunner = max(0, -yCoord/8);// to iste // jestli bitmapa zacne nad displejem, tak sa posuneme do casti, kde zacina displejem
     //xdisrunner, yDisRunner/ runnery pro display
-    int offset = yCoord%8;
+    short offset = yCoord%8;
     if (offset < 0) offset +=8;//aby byl kladny offset aj pri yCoord < 0
 
-    for(int yDisRunner = max(0, yCoord/8), yRunner = 0; ((yDisRunner < 6) && (yRunner < itsHeight+1)); (yDisRunner++,yRunner++))
+    for(short yDisRunner = max(0, yCoord/8), yRunner = 0; ((yDisRunner < 6) && (yRunner < itsHeight+1)); (yDisRunner++,yRunner++))
     {
-      for(int xDisRunner = max(0, xCoord), xRunner = 0; (xDisRunner < LCDWIDTH) && (xRunner < itsWidth); xDisRunner++, xRunner++)
+      for(short xDisRunner = max(0, xCoord), xRunner = 0; (xDisRunner < LCDWIDTH) && (xRunner < itsWidth); xDisRunner++, xRunner++)
       {
         if((yRunner == 0) && (xDisRunner < 84)) //prvy radek bitmapy, nema presahy zminula
         {

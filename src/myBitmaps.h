@@ -8,14 +8,15 @@ using namespace std;
 
 //extern  const uint8_t  nudesMap[29*2];
 
-extern  const uint8_t bowAndArrowMap[16*2];
+//extern  const uint8_t bowAndArrowMap[16*2];
 
 //extern const uint8_t xichtmap[2*8];
 extern   const uint8_t playerMap[13*2];
 extern   const uint8_t zomMap[13*2];
 extern   const uint8_t weakSkelMap[13*2];
 extern   const uint8_t slimMap[13*2];
-
+extern  const  uint8_t GUIMap[11*6];
+extern const uint8_t smallNudesMap[23*2];
 //extern const uint8_t fullmap[4*8];
 //xicht.XSize = 8;
 //xicht.YSize = 2;

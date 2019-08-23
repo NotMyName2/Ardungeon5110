@@ -37,9 +37,9 @@ public:
   graphicObject* secondDigit[3][3];
 
   void generateNewTile(short newX, short newY);
-  void moveRow(int cislo, int smer);
+  //void moveRow(int cislo, int smer);
   void displayGameField();
-  void moveColumn(int cislo, int smer);    //technicky rovnake jak
+  //void moveColumn(int cislo, int smer);    //technicky rovnake jak
 };
 
 extern GameField field;

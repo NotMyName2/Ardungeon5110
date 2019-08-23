@@ -46,9 +46,10 @@ private:
 
 //extern graphicObject* cross;
 //extern graphicObject* nudes;
+extern graphicObject* smallNudes;
 //graphicObject xicht(8, 2, xichtmap, 1, 4, 4);
 //extern graphicObject veryBig;
-extern graphicObject* bowAndArrow;
+//extern graphicObject* bowAndArrow;
 extern graphicObject* emptyGO;
 extern graphicObject* playerGO;
 extern graphicObject* gridGO;
@@ -56,5 +57,6 @@ extern graphicObject* gridGO;
 extern graphicObject* zomGO;
 extern graphicObject* weakSkelGO;
 extern graphicObject* slimGO;
+extern graphicObject* GUIGO;
 #define graphicObjectHIncluded
 #endif

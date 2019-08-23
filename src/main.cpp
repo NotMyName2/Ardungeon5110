@@ -86,10 +86,10 @@ void setup() {
   pinMode(A5, INPUT_PULLUP);
   pinMode(5, OUTPUT);
   pinMode(4, OUTPUT);
-  Serial.begin(9600);
+  //Serial.begin(9600);
   //attachInterrupt(digitalPinToInterrupt(2), pressedButtonInterrupt, FALLING);
   myDisplay.begin();
-  //nudes->isVisible = false;
+  smallNudes->isVisible = false;
   //bowAndArrow->isVisible = true;
   //bowAndArrow->xCoord = 4;
   //bowAndArrow->yCoord = 2;
@@ -123,7 +123,12 @@ bool wantToGenerate = true;
 short toGenerate = 9;
 void calculateNext()
 {
+  if(toGenerate == 0)
+  {
+    smallNudes->isVisible = true;
+  }
   wantToGenerate = true;
+
   while(wantToGenerate && toGenerate > 0)
   {
     short newnewX = random(0,3);
@@ -139,7 +144,7 @@ void calculateNext()
 
   //bowAndArrow->drawSelf(1);
   //zomGO->drawSelf(1);
-  Serial.println("printujeme policka");
+
   for(short x = 0; x < 3; x++)
   {
     /*for(short y = 0; y < 3; y++)
@@ -160,6 +165,12 @@ void calculateNext()
   }
   gridGO->drawSelf(1);
   field.displayGameField();
+  GUIGO->drawSelf(1);
+  if(smallNudes->isVisible == true)
+  {
+    digitalWrite(5, !digitalRead(5));
+      smallNudes->drawSelf(1);
+  }
 
   //player->drawSelfP(1);
 
@@ -171,7 +182,7 @@ void refreshDisplay()
 }
 
 unsigned long lastTime = 0;
-unsigned long timeStep = 200;
+unsigned long timeStep = 600;
 
 int state = 0;
 
@@ -184,8 +195,6 @@ void loop()
         myDisplay.clearDisplay();
         calculateNext();
         refreshDisplay();
-        digitalWrite(5, !digitalRead(5));
-        delay(800);
 
       }
 }
