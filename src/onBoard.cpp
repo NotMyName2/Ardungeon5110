@@ -70,7 +70,7 @@ OnBoard::~OnBoard()
 
 void OnBoard::drawSelf(bool positive)
 {
-  itsGraphicObject->xCoord = Xcoordinate*20+4;
+  itsGraphicObject->xCoord = Xcoordinate*20+1;
   itsGraphicObject->yCoord = Ycoordinate*16;
   itsGraphicObject->isVisible = true;
   itsGraphicObject->drawSelf(positive);

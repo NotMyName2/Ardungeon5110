@@ -11,10 +11,10 @@ using namespace std;
 extern  uint8_t bowAndArrowMap[16*2];
 
 //extern uint8_t xichtmap[2*8];
-extern   uint8_t playerMap[14*2];
-extern   uint8_t zomMap[14*2];
-extern   uint8_t skelMap[14*2];
-extern   uint8_t slimMap[14*2];
+extern   uint8_t playerMap[13*2];
+extern   uint8_t zomMap[13*2];
+extern   uint8_t weakSkelMap[13*2];
+extern   uint8_t slimMap[13*2];
 
 //extern uint8_t fullmap[4*8];
 //xicht.XSize = 8;

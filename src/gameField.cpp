@@ -39,7 +39,7 @@ void GameField::generateNewTile(short newX, short newY, int enemyType)
     }
     case 1:
     {
-      newTile->itsGraphicObject = skelGO;
+      newTile->itsGraphicObject = weakSkelGO;
       break;
     }
     case 2:

@@ -54,7 +54,7 @@ extern graphicObject* playerGO;
 extern graphicObject* gridGO;
 
 extern graphicObject* zomGO;
-extern graphicObject* skelGO;
+extern graphicObject* weakSkelGO;
 extern graphicObject* slimGO;
 #define graphicObjectHIncluded
 #endif

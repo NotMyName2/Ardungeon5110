@@ -57,13 +57,15 @@ extern Adafruit_PCD8544 myDisplay;
 //graphicObject xicht(8, 2, xichtmap, 1, 4, 4);
 //graphicObject veryBig(100, 7, veryBigMap);
 graphicObject* bowAndArrow = new graphicObject(16, 2, bowAndArrowMap);
-graphicObject* playerGO = new graphicObject(14, 2, playerMap);
 //graphicObject full(8,4,fullmap);
 graphicObject* gridGO = new graphicObject(64, 6, gridMap);
 
-graphicObject* zomGO = new graphicObject(14, 2, zomMap);
-graphicObject* skelGO = new graphicObject(14, 2, skelMap);
-graphicObject* slimGO = new graphicObject(14, 2, slimMap);
+graphicObject* playerGO = new graphicObject(13, 2, playerMap);
+graphicObject* zomGO = new graphicObject(13, 2, zomMap);
+graphicObject* weakSkelGO = new graphicObject(13, 2, weakSkelMap);
+graphicObject* slimGO = new graphicObject(13, 2, slimMap);
+
+
 graphicObject* emptyGO = new graphicObject(4, 1, emptyMap);
 
 
