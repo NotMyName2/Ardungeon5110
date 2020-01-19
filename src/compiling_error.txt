@@ -1,0 +1,7 @@
+/home/nmn/Documents/PlatformIO/Projects/Ardungeon5110/src/memoryFree.cpp:24:2: error: #endif without #if
+ #endif
+  ^
+/home/nmn/Documents/PlatformIO/Projects/Ardungeon5110/src/memoryFree.cpp: In function ‘int freeMemory()’:
+/home/nmn/Documents/PlatformIO/Projects/Ardungeon5110/src/memoryFree.cpp:18:46: error: ‘__malloc_heap_start’ was not declared in this scope
+   return __brkval ? &top - __brkval : &top - __malloc_heap_start;
+                                              ^

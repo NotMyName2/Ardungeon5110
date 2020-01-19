@@ -62,13 +62,13 @@ extern Adafruit_PCD8544 myDisplay;
 
 //graphicObject* cross = new graphicObject(5,1,crossOofMap);
 //graphicObject* nudes = new graphicObject(29,2,nudesMap);
-graphicObject* smallNudes = new graphicObject(23,2,smallNudesMap,61, 32);
+//graphicObject* smallNudes = new graphicObject(23,2,smallNudesMap,61, 32);
 
 //graphicObject xicht(8, 2, xichtmap, 1, 4, 4);
 //graphicObject veryBig(100, 7, veryBigMap);
 //graphicObject* bowAndArrow = new graphicObject(16, 2, bowAndArrowMap);
 //graphicObject full(8,4,fullmap);
-graphicObject* gridGO = new graphicObject(64, 6, gridMap,0,0);
+//graphicObject* gridGO = new graphicObject(64, 6, gridMap,0,0);
 
 graphicObject* playerGO = new graphicObject(13, 2, playerMap);
 graphicObject* zomGO = new graphicObject(13, 2, zomMap);

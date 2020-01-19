@@ -7,7 +7,13 @@
   #include "onBoard.h"
 #endif
 
+
+
+
 #ifndef playerHIncluded
+
+
+
 
 class Player:public OnBoard
 {
@@ -19,6 +25,7 @@ class Player:public OnBoard
     short defenseVal;
 
 
+
     Player();
     Player(short newX, short newY);
     ~Player();
@@ -27,11 +34,11 @@ class Player:public OnBoard
     bool canMove(short smer);
     void playerMove(short smer);// inherits
     void refuseMove();
-    void attack(short smer);
+    void attack(short newX, short newY);
     void action();
-    void drawSelfP(bool positive);
+    virtual void drawSelf(bool positive);
   private:
-    short dummy;
+    short dummyThicc;
 };
 
 #define playerHIncluded

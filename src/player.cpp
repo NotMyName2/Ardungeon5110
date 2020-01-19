@@ -1,20 +1,21 @@
 
 #ifndef playerCIncluded
 
+
 #ifndef LEFT
-#define LEFT 1
+#define LEFT 0
 #endif
 
 #ifndef DOWN
-#define DOWN 2
+#define DOWN 1
 #endif
 
 #ifndef RIGHT
-#define RIGHT 3
+#define RIGHT 2
 #endif
 
 #ifndef UP
-#define UP 4
+#define UP 3
 #endif
 
 #ifndef graphicObjectHIncluded
@@ -32,6 +33,12 @@
 #ifndef gameFieldIncluded
 #include "gameField.h"
 #endif
+
+#ifndef smery
+#include "smery.h"
+#endif
+
+
 
 #ifndef POSITIVE
 #define POSITIVE 1
@@ -91,16 +98,27 @@ Player::Player(short XCOO, short YCOO):
 
   bool Player::canMove(short smer)
   {
+    if (field.isItIn(Xcoordinate+dX[smer], Ycoordinate+dY[smer]) == false)
+    {
+      return false;
+    }
+    /*
     if( (smer == UP) && (Ycoordinate <= 0)){return false;}
     if( (smer == DOWN) && (Ycoordinate >= 2)) {return false;}
     if( (smer == LEFT) && (Xcoordinate <= 0)) {return false;}
-    if( (smer == RIGHT) && (Xcoordinate >= 2)) {return false;}
-
-    if(smer == UP && field.policka[Xcoordinate][Ycoordinate-1]->tileType == ENEMY) {return false;}
-    if(smer == DOWN && field.policka[Xcoordinate][Ycoordinate+1]->tileType == ENEMY) {return false;}
-    if(smer == LEFT && field.policka[Xcoordinate][Xcoordinate-1]->tileType == ENEMY) {return false;}
-    if(smer == RIGHT && field.policka[Xcoordinate][Xcoordinate+1]->tileType == ENEMY) {return false;}
-
+    if( (smer == RIGHT) && (Xcoordinate >= 2)) {return false;}  //crude IsItIn
+    */
+    short newX = Xcoordinate + dX[smer];
+    short newY = Ycoordinate + dY[smer];
+    if (field.policka[newX][newY] == 0)
+    {
+      return true;
+    }
+    if (field.policka[newX][newY]->tileType == ENEMY)
+    {
+        attack(newX, newY);
+        return false;
+    }
     return true;
   }
   void Player::move(short smer)
@@ -109,14 +127,11 @@ Player::Player(short XCOO, short YCOO):
     {
 
       field.policka[Xcoordinate][Ycoordinate] = 0;
-
-      if(smer == UP) {Ycoordinate--;}
-      if(smer == DOWN) {Ycoordinate++;}
-      if(smer == LEFT) {Xcoordinate--;}
-      if(smer == RIGHT) {Xcoordinate++;}
+      Ycoordinate+=dY[smer];
+      Xcoordinate+=dX[smer];
       field.policka[Xcoordinate][Ycoordinate] = this;
       field.policka[Xcoordinate][Ycoordinate]->tileType = PLAYER;
-      drawSelfP(1);
+      //drawSelfP(1);
     }
     else
     Player::refuseMove();
@@ -125,9 +140,9 @@ Player::Player(short XCOO, short YCOO):
 
     void Player::refuseMove()
     {
-        drawSelfP(POSITIVE);
+        drawSelf(POSITIVE);
         delay(100);
-        drawSelfP(NEGATIVE);
+        drawSelf(NEGATIVE);
         playerGO->xCoord--;
         playerGO->xCoord--;
         playerGO->drawSelf(POSITIVE);
@@ -150,7 +165,7 @@ Player::Player(short XCOO, short YCOO):
     }
 
 
-  void Player::drawSelfP(bool positive)
+  void Player::drawSelf(bool positive)
   {
       playerGO->xCoord = Xcoordinate*20+4;
       playerGO->yCoord = Ycoordinate*16;
@@ -158,9 +173,10 @@ Player::Player(short XCOO, short YCOO):
       playerGO->drawSelf(positive);
   }
 
-  void Player::attack(short smer)
+  void Player::attack(short newX, short newY)
   {
     score++;
+    field.attackPosition(newX, newY);
     return;
   }
 

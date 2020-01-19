@@ -36,9 +36,11 @@ public:
   graphicObject* firstDigit[3][3];
   graphicObject* secondDigit[3][3];
 
-  void generateNewTile(short newX, short newY);
+  int generateNewTile(short newX, short newY);
   //void moveRow(int cislo, int smer);
   void displayGameField();
+  bool isItIn(short row, short col);
+  void attackPosition(short newX, short newY, short damage=5);
   //void moveColumn(int cislo, int smer);    //technicky rovnake jak
 };
 

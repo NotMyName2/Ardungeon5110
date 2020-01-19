@@ -16,7 +16,7 @@ extern   const uint8_t zomMap[13*2];
 extern   const uint8_t weakSkelMap[13*2];
 extern   const uint8_t slimMap[13*2];
 extern  const  uint8_t GUIMap[11*6];
-extern const uint8_t smallNudesMap[23*2];
+//extern const uint8_t smallNudesMap[23*2];
 //extern const uint8_t fullmap[4*8];
 //xicht.XSize = 8;
 //xicht.YSize = 2;
@@ -33,7 +33,7 @@ extern const uint8_t smallNudesMap[23*2];
 
 //extern const uint8_t veryBigMap[100*7];
 
-extern   const uint8_t gridMap[64*6];
+//extern   const uint8_t gridMap[64*6];
 extern const uint8_t emptyMap[4*1];
 
 extern const uint8_t numbers[10][3*1];

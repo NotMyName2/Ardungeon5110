@@ -39,6 +39,7 @@ OnBoard::OnBoard()
     Ycoordinate = 0;
     HP = 4;
     itsGraphicObject = 0;
+    
 
 }
 
@@ -75,6 +76,8 @@ void OnBoard::drawSelf(bool positive)
   itsGraphicObject->isVisible = true;
   itsGraphicObject->drawSelf(positive);
 }
+
+//OnBoard::takeDamage(short damage)
 
 
 

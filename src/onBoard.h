@@ -41,9 +41,11 @@ public:
 
    //void move(int smer);
    //bool canMove(int smer);
-   void drawSelf(bool positive);
+   virtual void drawSelf(bool positive);
 
 
 };
+
+
 #define onBoardIncluded
 #endif
