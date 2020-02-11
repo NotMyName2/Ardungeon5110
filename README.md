@@ -12,7 +12,6 @@ The only code not written by me are the Adafruit libraries. You can find them he
 The game runs on Arduino Nano(ATMega328p), 6 SPST buttons, some capacitors for debouncing and an old Nokia5110 84x48 monochrome LCD display.
 
 Planned features:
-
   *Enemy class
 
   *Item class
