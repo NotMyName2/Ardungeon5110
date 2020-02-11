@@ -13,14 +13,25 @@ The game runs on Arduino Nano(ATMega328p), 6 SPST buttons, some capacitors for d
 
 Planned features:
 *Enemy class
+
 *Item class
+
 *implementing weapons
+
 *implementing loot, score and GUI
+
 *potions and status effects
+
 *ranged weapons
+
 *piercing weapons
+
 *improved generation
+
 *explosives
+
 *different GUI for different screens
+
 *tutorial
+
 *consider using interrupts for buttons instead of polling
