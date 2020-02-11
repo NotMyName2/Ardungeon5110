@@ -11,30 +11,33 @@ The only code not written by me are the Adafruit libraries. You can find them he
 
 The game runs on Arduino Nano(ATMega328p), 6 SPST buttons, some capacitors for debouncing and an old Nokia5110 84x48 monochrome LCD display.
 
+
 Planned features:
 
-  *Enemy class
+  -Enemy class
 
-  *Item class
+  -Item class
 
-  *implementing weapons
+  -implementing weapons
 
-  *implementing loot, score and GUI
+  -implementing loot, score and GUI
 
-  *potions and status effects
+  -potions and status effects
 
-  *ranged weapons
+  -ranged weapons
 
-  *piercing weapons
+  -piercing weapons
 
-  *improved generation
+  -improved generation
 
-  *explosives
+  -explosives
 
-  *different GUI for different screens
+  -different GUI for different screens
 
-  *tutorial
+  -tutorial
 
-  *consider using interrupts for buttons instead of polling
+  -consider using interrupts for buttons instead of polling
+
+
 
 yeet
